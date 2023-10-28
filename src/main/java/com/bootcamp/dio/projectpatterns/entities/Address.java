@@ -3,11 +3,13 @@ package com.bootcamp.dio.projectpatterns.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotEmpty;
 
 @Entity
 public class Address {
 
     @Id
+    @NotEmpty(message = "Input Error. Cep cannot be empty.")
     private String cep;
     private String logradouro;
     private String complemento;
